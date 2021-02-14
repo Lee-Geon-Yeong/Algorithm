@@ -1,12 +1,19 @@
-S=list(input())
-S.sort()
-sum=0
-for i in range(len(S)):
-    if int(ord(S[i]))-int(ord("A"))+1<0:
-        sum+=int(S[i])
+data=input()
+result=[]
+value=0
+
+for x in data:
+    if x.isalpha():
+        result.append(x)
     else:
-        continue
-        
-print(S)
-print(''.join(S)+str(sum))
+        value+=int(x)
+
+result.sort()
+
+if value != 0:
+    result.append(str(value))
+
+print(''.join(result))
+
+# 리스트를 출력할 때는 ''.join(list 이름) 을 사용하자 !
 

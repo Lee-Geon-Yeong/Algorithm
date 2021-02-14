@@ -1,14 +1,16 @@
-s=input()
-sum=0
-count=0
-for i in range(len(s)//2):
-    k=i+1
-    for j in range(i, len(s), i):
-        print(f"기준{s[0:i]} : 비교{s[k:j]}")
-        k=j
-        if s[0:i]==s[k:j]:
-            count+=1
-print(count)
-
-# # len(s)//2
-# abcabcabcabcdededdededede
+def solution(s):
+    answer=len(s)
+    for step in range(1, len(s))//2+1):
+        compressed=""
+        prev=s[0:step]
+        count=1
+        for j in range(step, len(s), step):
+            if prev==s[j:j+step]:
+                count+=1
+            else:
+                compressed+=str(count)+prev if count>=2 else prev
+                prev = s[j:j+step]
+                count=1
+        compressed+=str(count)+prev if count>=2 else prev
+        answer=min(answer, len(compressed))
+    return answer
