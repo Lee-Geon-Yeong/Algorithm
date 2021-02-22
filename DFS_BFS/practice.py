@@ -1,5 +1,5 @@
 M,N,H=map(int,input().split())
-for _ in range(H):
-    graph=[list(map(int, input().split())) for _ in range(N)]
+
+graph=[[[] for _ in range(M)] for _ in range(H)]
 
 print(graph)
