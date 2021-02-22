@@ -43,8 +43,4 @@ elif result==1:
 else:
     print(result-1)
 
-            
-
-
-
 print(graph)
