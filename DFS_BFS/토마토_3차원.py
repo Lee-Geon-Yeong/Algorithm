@@ -1,14 +1,12 @@
 import copy
 from collections import deque
 
-
 M, N, H = map(int, input().split())
 box = [[[]for _ in range(N)] for _ in range(H)]
 for h in range(H):
     for n in range(N):
         box[h][n]=list(map(int, input().split()))
 ripen_box = copy.deepcopy(box) #인풋을 수정하기 싫어서 복사해준다
-
 
 #3차원 queue에 넣어준다. 순서는 인풋 순서대로
 queue = deque()
@@ -17,7 +15,6 @@ for m in range(M):
         for h in range(H):
             if box[h][n][m] == 1:
                 queue.append([h, n, m])
-
 
 #BFS를 3차원으로 바꿔준다
 while queue:
