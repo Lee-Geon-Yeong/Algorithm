@@ -1,5 +1,5 @@
 for tc in range(int(input())):
-    # 금광 정보 입력
+
     n, m=map(int, input().split())
     array=list(map(int, input().split()))
 
