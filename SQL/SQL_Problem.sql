@@ -24,21 +24,25 @@
 2. SUM, MAX, MIN 
  1) 최댓값 구하기
   SELECT MAX(DATETIME) FROM ANIMAL_INS
+
  2) 최솟값 구하기
   SELECT MIN(DATETIME) FROM ANIMAL_INS
+
  3) 동물 수 구하기
   SELECT COUNT(*) FROM ANIMAL_INS
+
  4) 중복 제거하기
+  SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS
 
 3. GROUP BY
  1) 고양이와 개는 몇 마리 있을까
-
+  SELECT ANIMAL_TYPE, COUNT(DISTINCT ANIMAL_ID) as 'count' FROM ANIMAL_INS WHERE ANIMAL_TYPE in ('Dog', 'Cat') GROUP BY ANIMAL_TYPE ORDER BY ANIMAL_TYPE
  2) 동명 동물 수 찾기
-
+  
  3) 입양 시각 구하기(1)
-
+  
  4) 입양 시각 구하기(2)
-
+  
 4. IS NULL
  1) 이름이 없는 동물의 아이디
 
