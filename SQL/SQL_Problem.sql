@@ -67,16 +67,27 @@
 
 5. JOIN
  1) 없어진 기록 찾기
-
+  SELECT b.ANIMAL_ID, b.NAME
+  FROM ANIMAL_OUTS as b
+  LEFT JOIN ANIMAL_INS as a ON a.ANIMAL_ID = b.ANIMAL_ID
+  WHERE a.ANIMAL_ID IS NULL
+  ORDER BY a.ANIMAL_ID
+  
  2) 있었는데요 없었습니다
-
+  SELECT b.ANIMAL_ID, b.NAME FROM ANIMAL_OUTS as b 
+  INNER JOIN ANIMAL_INS as a 
+  ON a.ANIMAL_ID=b.ANIMAL_ID 
+  WHERE a.DATETIME>b.DATETIME 
+  ORDER BY a.DATETIME
  3) 오랜 기간 보호한 동물(1)
 
  4) 보호소에서 중성화한 동물
 
 6. String, Date
  1) 루시와 엘라 찾기
-
+  SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS 
+  WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+  ORDER BY ANIMAL_ID ASC
  2) 이름에 el이 들어가는 동물 찾기
 
  3) 중성화 여부 파악하기
@@ -84,3 +95,6 @@
  4) 오랜 기간 보호한 동물(2)
 
  5) DATETIME에서 DATE로 형 변환
+
+
+https://blog.naver.com/opcy02/222196609856
