@@ -86,7 +86,7 @@
   on a.ANIMAL_ID=b.ANIMAL_ID 
   where b.ANIMAL_ID is null 
   order by a.DATETIME limit 3
-
+  1
  4) 보호소에서 중성화한 동물
 
 6. String, Date
