@@ -4,7 +4,7 @@ index = []
 for i in range(N):
     data.append(list(map(int, input().split())))
 
-S, X, Y = map(int, input().split())
+S, X, Y= map(int, input().split())
 
 
 for i in range(N):
@@ -14,3 +14,5 @@ for i in range(N):
                 index.append((i, j))
 
 print(index)
+
+ 
