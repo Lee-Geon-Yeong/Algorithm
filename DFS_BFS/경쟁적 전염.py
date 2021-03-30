@@ -6,7 +6,6 @@ for i in range(N):
 
 S, X, Y= map(int, input().split())
 
-
 for i in range(N):
     for j in range(N):
         for L in range(1, K+1):
